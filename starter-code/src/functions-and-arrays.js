@@ -1,4 +1,10 @@
 // Find the maximum
+let maxOfTwoNumbers = function (nr1, nr2) {
+  return Math.max(nr1, nr2);
+};
+maxOfTwoNumbers();
+//console.log(maxOfTwoNumbers(3,10));
+
 
 // Finding Longest Word
 const words = [
@@ -11,13 +17,42 @@ const words = [
   'crackpot'
 ];
 
+function findLongestWord(words) {
+  if (words.length === 0) // gives the 2nd test regarding empty array and returning null
+    return null;
+  let longestWord = "";
+  for (let i = 0; i < words.length; i++) {
+    if (longestWord.length < words[i].length)
+      longestWord = words[i];
+  }
+  return longestWord;
+}
+
+
 // Calculating a Sum
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
+let sumArray = function (numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  return sum;
+}
+
 // Calculate the Average
 
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+
+let averageNumbers = function (numbersAvg) {
+  if (numbersAvg.length === 0) {
+    return null;
+  } else {
+    return sumArray(numbersAvg) / numbersAvg.length;
+  }
+
+}
 
 // Array of Strings
 const wordsArr = [
@@ -32,6 +67,18 @@ const wordsArr = [
   'fuel',
   'palace'
 ];
+
+let averageWordLength = function (wordsArr) {
+  let sum = 0;
+  if (wordsArr.length === 0) {
+    return null;
+  } else {
+    for (let i = 0; i < wordsArr.length; i++) { // loop through array
+      sum += wordsArr[i].length; //increments each word length to the sum
+    }
+    return sum / wordsArr.length;
+  }
+};
 
 // Unique Arrays
 const wordsUnique = [
@@ -48,6 +95,21 @@ const wordsUnique = [
   'bring'
 ];
 
+let uniquifyArray = function (wordsUnique) {
+  let uniqueArray = [];
+
+  if (wordsUnique.length === 0) {
+    return [];
+  } else {
+    for (let word = 0; word < wordsUnique.length; word++) {
+      if (!uniqueArray.includes(wordsUnique[word])) {
+        uniqueArray.push(wordsUnique[word]);
+      }
+    }
+    return uniqueArray;
+  }
+}
+
 // Finding Elements
 const wordsFind = [
   'machine',
@@ -59,6 +121,17 @@ const wordsFind = [
   'truth',
   'disobedience'
 ];
+
+let doesWordExist = function (wordsFind, word) {
+  //   return wordsFind.includes(word);
+  // 
+  for (let i = 0; i < wordsFind.length; i++) {
+    if (wordsFind[i] === word)
+      return true;
+  }
+  return false;
+}
+
 
 // Counting Repetition
 const wordsCount = [
@@ -74,6 +147,23 @@ const wordsCount = [
   'disobedience',
   'matter'
 ];
+
+let howManyTimes = function (wordsCount, word) {
+  let countWords = 0;
+
+  if (wordsCount.length === 0) {
+    return 0;
+
+  } else {
+
+    for (let i = 0; i < wordsCount.length; i++) {
+      if (wordsCount[i] === word) {
+        countWords++;
+      }
+    }
+    return countWords;
+  }
+}
 
 // Bonus
 
